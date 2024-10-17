@@ -3,7 +3,7 @@ attachments: [os-structure.png, vms.png]
 tags: [CLI, kernel, linux, operating system, os]
 title: Linux notes
 created: '2024-10-15T21:23:00.816Z'
-modified: '2024-10-17T21:58:56.187Z'
+modified: '2024-10-17T22:29:21.691Z'
 ---
 
 # Linux notes
@@ -120,7 +120,11 @@ graph TD
     - **Monolithic Kernel**: All OS services run in a single space (e.g., Linux)
     - **Microkernel**: Minimal core services, with additional services running separately (e.g., Minix)
 
-  ![](@attachment/os-structure.png)
+<p align="center">
+  <a href="https://github.com/isabellabreder/sre-studies/blob/linux/00-linux/attachments/os-structure.png">
+    <img src="https://github.com/isabellabreder/sre-studies/blob/linux/00-linux/attachments/os-structure.png?raw=true" width="800" alt="Editor" />
+  </a>
+</p>
 
 
 ------------------------
@@ -133,7 +137,11 @@ graph TD
   - Provides full isolation, where each VM operates like a separate physical computer (the computer doesn't know that it's placed on top of another one)
   - If something breaks inside the VM, it doesn't affects the actual computer
 
-  ![](@attachment/vms.png)
+<p align="center">
+  <a href="https://github.com/isabellabreder/sre-studies/blob/linux/00-linux/attachments/vms.png">
+    <img src="https://github.com/isabellabreder/sre-studies/blob/linux/00-linux/attachments/vms.png?raw=true" width="800" alt="Editor" />
+  </a>
+</p>
 
 - **Hypervisor**
   - The hypervisor (or virtual machine monitor) is the software layer that enables multiple virtual machines to run on a single physical machine
@@ -152,7 +160,11 @@ graph TD
     - Examples: VMware Workstation, Oracle VirtualBox, and Parallels Desktop
     - Easier to set up and use, making it ideal for development and testing environments
 
-  ![](@attachment/hypervisors.png)
+<p align="center">
+  <a href="https://github.com/isabellabreder/sre-studies/blob/linux/00-linux/attachments/hypervisor.png">
+    <img src="https://github.com/isabellabreder/sre-studies/blob/linux/00-linux/attachments/hypervisor.png?raw=true" width="800" alt="Editor" />
+  </a>
+</p>
 
 - **Benefits and usage**
   - **Type 1**:
