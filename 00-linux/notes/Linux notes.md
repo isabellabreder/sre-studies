@@ -3,7 +3,7 @@ attachments: [os-structure.png, vms.png]
 tags: [CLI, kernel, linux, operating system, os]
 title: Linux notes
 created: '2024-10-15T21:23:00.816Z'
-modified: '2024-10-21T14:00:01.636Z'
+modified: '2024-11-07T19:47:39.810Z'
 ---
 
 # Linux notes
@@ -11,6 +11,7 @@ modified: '2024-10-21T14:00:01.636Z'
 * [Operating Systems](#operating-systems)
 * [Virtualization](#virtualization)
 * [Linux File System](#linux-file-system)
+* [Command Line Basics](#command-line-basics)
 ------------------------
 <h2 id="operating-systems">Operating systems</h2>
 
@@ -264,3 +265,87 @@ graph TD
   - Historically used for manually mounting file systems or external drives.
   - Often used by system administrators for temporary file systems.
 
+------------------------
+<h2 id="command-line-basics">Command Line Basics</h2>
+
+### Uses
+- **File System Operations**:
+  - Create folders
+  - List files in a directory
+  - Rename and remove files
+- **Display OS Information**
+
+### GUI vs CLI
+- **GUI**: Graphical User Interface
+- **CLI**: Command Line Interface
+  - On servers, only the CLI is typically available.
+  - A terminal prompt displays:
+    - The Linux user you’re logged in as
+    - The computer name
+    - The current directory
+    - An indicator of whether you’re a regular user (`$`) or a root user (`#`)
+    - Example: `username@computer-name: [directory]$`
+
+### Basic Commands
+
+#### Directory Operations
+- `pwd`: Print Working Directory; shows the current directory path.
+- `ls`: List directories and files in the current directory.
+  - `ls -R`: Recursively lists all files and directories within subdirectories.
+  - `ls -a`: Lists all files, including hidden files (dotfiles).
+  - `ls -l`: Lists files with detailed information (permissions, owner, etc.).
+  - **Note**: Flags can be combined, e.g., `ls -la`.
+- `cd [dirname]`: Change Directory; navigates to `[dirname]`.
+  - `cd ..`: Moves up one directory.
+  - `cd /`: Moves to the root directory.
+- `mkdir [dirname]`: Make Directory; creates a new directory named `[dirname]`.
+- `clear`: Clears the terminal screen.
+
+#### File Operations
+- `touch [filename]`: Creates a new file named `[filename]` (include file extension).
+- `rm [filename]`: Removes `[filename]`.
+  - `rm -r [dirname]`: Recursively deletes `[dirname]` and its contents.
+  - `rm -d [dirname]` *or* `rmdir [dirname]`: Deletes an empty directory.
+- `cat [filename]`: Concatenate; displays the contents of `[filename]`.
+
+<div style="border-left: 4px solid #007bff; padding: 8px; background-color: #f1f8ff;">
+    📌 <strong>Note:</strong> In Linux, everything is considered a "file" — from documents and images to directories, commands, and devices.
+</div>
+
+#### Navigating the File System
+- `cd [absolute path]`: Navigates to the specified absolute path, regardless of the current directory.  
+  - Note: An absolute path starts from the root directory `/`. You can also abbreviate your home directory as `~`.
+- `ls [absolute path]`: Lists contents of the specified path without changing the current directory.
+
+#### Other Useful Commands
+- `mv [filename] [new_filename]`: Renames `[filename]` to `[new_filename]`.
+- `cp -r [dirname] [new_dirname]`: Copies `[dirname]` to `[new_dirname]`, including all contents.
+- `history`: Lists all past commands in the current session.
+  - Use arrow keys to navigate through command history.
+  - `ctrl+r`: Searches for commands in history.
+  - `history [n]`: Lists the last `[n]` commands.
+- `clear`: Clears the terminal window (can also be done with `ctrl+l`).
+- `ctrl+c`: Stops the execution of the current command.
+- `uname -a`: Displays system and kernel information.
+- `cat /etc/os-release`: Shows the OS version.
+- `lscpu`: Displays CPU architecture information.
+- `lsmem`: Displays memory information.
+- `su - [username]`: Switches to `[username]`.
+
+> There are numerous other useful commands. A cheat sheet or web search can be handy for finding commands when needed.
+
+<p align="center">
+  <a href="https://github.com/isabellabreder/sre-studies/blob/linux/00-linux/attachments/commands.jpg">
+    <img src="https://github.com/isabellabreder/sre-studies/blob/linux/00-linux/attachments/commands.jpg?raw=true" width="800" alt="Editor" />
+  </a>
+</p>
+
+### Why Use the CLI?
+- The CLI is:
+  - Efficient and quick once you’re familiar with it.
+  - Ideal for bulk operations.
+  - Often more powerful than a GUI.
+
+### Executing Commands as a Superuser
+- Certain commands require root privileges, such as `adduser`.
+- `sudo [command]`: Runs `[command]` with superuser privileges, allowing regular users to execute co
