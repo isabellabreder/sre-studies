@@ -3,7 +3,7 @@ attachments: [os-structure.png, vms.png]
 tags: [CLI, kernel, linux, operating system, os]
 title: Linux notes
 created: '2024-10-15T21:23:00.816Z'
-modified: '2024-11-07T19:47:39.810Z'
+modified: '2024-11-25T11:55:08.100Z'
 ---
 
 # Linux notes
@@ -12,6 +12,7 @@ modified: '2024-11-07T19:47:39.810Z'
 * [Virtualization](#virtualization)
 * [Linux File System](#linux-file-system)
 * [Command Line Basics](#command-line-basics)
+* [Package Manager](#package-manager)
 ------------------------
 <h2 id="operating-systems">Operating systems</h2>
 
@@ -348,4 +349,5 @@ graph TD
 
 ### Executing Commands as a Superuser
 - Certain commands require root privileges, such as `adduser`.
-- `sudo [command]`: Runs `[command]` with superuser privileges, allowing regular users to execute co
+- `sudo [command]`: Runs `[command]` with superuser privileges, allowing regular users to execute commands that would otherwise require root access.
+
