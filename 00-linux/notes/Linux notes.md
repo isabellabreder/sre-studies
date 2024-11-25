@@ -3,7 +3,7 @@ attachments: [os-structure.png, vms.png]
 tags: [CLI, kernel, linux, operating system, os]
 title: Linux notes
 created: '2024-10-15T21:23:00.816Z'
-modified: '2024-11-25T11:55:08.100Z'
+modified: '2024-11-25T15:18:43.877Z'
 ---
 
 # Linux notes
@@ -350,4 +350,71 @@ graph TD
 ### Executing Commands as a Superuser
 - Certain commands require root privileges, such as `adduser`.
 - `sudo [command]`: Runs `[command]` with superuser privileges, allowing regular users to execute commands that would otherwise require root access.
+
+
+------------------------
+<h2 id="package-manager">Package Manager</h2>
+
+- You will typically install apps using a **package manager** tool.
+
+### Software package
+- A software package is a compressed archive containing all the required files for an application.
+- Applications often have **dependencies**—other software libraries or tools needed for them to run.
+  - Dependencies are usually not bundled with the main package and need to be installed separately.
+- In Linux, software files are distributed across various directories, making it challenging to manage everything manually.
+  
+### Package manager
+- A package manager:
+  - Downloads, installs, or updates software from a repository.
+  - Ensures the integrity and authenticity of packages.
+  - Manages and resolves dependencies for you.
+  - Knows where to place all files within the Linux file system.
+  - Makes software upgrades easy.
+- Every Linux distribution includes a package manager.
+  - **Ubuntu**: `apt` (Advanced Package Tool).
+
+<p align="center">
+  <a href="https://github.com/isabellabreder/sre-studies/blob/linux/00-linux/attachments/package-manager.png">
+    <img src="https://github.com/isabellabreder/sre-studies/blob/linux/00-linux/attachments/package-manager.png?raw=true" width="800" alt="Editor" />
+  </a>
+</p>
+
+### Using `apt` to manage software
+- `apt` commands:
+  - `apt search <package_name>`: Searches for available versions of the specified package.
+  - `apt install <package_name>`: Installs the specified package.
+    - You can install multiple packages simultaneously: `apt install <package_name1> <package_name2>`.
+  - `apt remove <package_name>`: Removes the installed package.
+
+### Difference between `apt` and `apt-get`
+- `apt-get` is an older command-line tool also available on Ubuntu.
+  - **Limitations**: Lacks some usability features, such as a `search` command.
+- `apt`:
+  - A newer, more user-friendly tool.
+  - Has fewer, more organized commands.
+  - Recommended for most users.
+
+### Repositories
+- Repositories are storage locations containing thousands of software packages.
+- The package manager fetches packages from these repositories.
+- **Updating the Package Index**:
+  - Always update the package index before installing or upgrading software.
+  - `apt update`: Refreshes the package index with the latest records from repositories.
+  - The APT package index is a database containing information on available packages.
+
+### Alternative ways to install software
+
+#### Why use alternatives?
+- Some software packages may not be available in official repositories, or the repository may not contain the latest version.
+- Packages undergo verification before being added to repositories, which can delay availability.
+
+#### Alternatives
+1. **Ubuntu Software Center**: A graphical interface for managing software.
+2. **Snap Package Manager**:
+   - A **snap** is a bundle of an app and its dependencies, making it self-contained.
+   - **Snap Store**: A platform to upload snaps, as well as browse and install software.
+3. **Add a repository**:
+   - You can add new repositories to the list and fetch packages directly.
+   - **PPA (Personal Package Archive)**:
+     - Community-provided repositories often used by developers to release updates faster than in the official repositories.
 
